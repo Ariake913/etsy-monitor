@@ -34,7 +34,7 @@ def get_visits():
     r = requests.get(url, headers=headers)
     data = r.json()
 
-    print(data)   # ← これ追加（超重要）
+    print("API RESPONSE:", data)  # ←追加
 
     return 0
 
