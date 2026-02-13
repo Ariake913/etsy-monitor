@@ -13,6 +13,18 @@ STATE_FILE = "state.json"
 
 
 # ===== Etsy 訪問者数取得 =====
+#def get_visits():
+#    url = f"https://openapi.etsy.com/v3/application/shops/{SHOP_ID}/stats"
+#    headers = {
+#        "x-api-key": ETSY_API_KEY
+#    }
+#
+#    r = requests.get(url, headers=headers)
+#    data = r.json()
+#
+#    # visits を取得（API仕様によりキー名変わる場合あり）
+#    return data["results"]["visits"]
+
 def get_visits():
     url = f"https://openapi.etsy.com/v3/application/shops/{SHOP_ID}/stats"
     headers = {
@@ -22,9 +34,9 @@ def get_visits():
     r = requests.get(url, headers=headers)
     data = r.json()
 
-    # visits を取得（API仕様によりキー名変わる場合あり）
-    return data["results"]["visits"]
+    print(data)   # ← これ追加（超重要）
 
+    return 0
 
 # ===== 前回値読み込み =====
 def load_previous():
